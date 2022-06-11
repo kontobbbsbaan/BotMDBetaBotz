@@ -620,7 +620,7 @@ user.afkReason = ''
 // Detect Group Invite
 if (m.mtype === 'groupInviteMessage') {
 teks = `Ketik .owner untuk bergabung ke group whatsapp anda`
-sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./media/image/mans.jpg'), 2022, "Lol Lexxy+ ~ Multi Device", "6283155687629@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
+sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./media/image/mans.jpg'), 2022, "Lol ArullOfc+ ~ Multi Device", "6285822347348@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 /*const bodyyy = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
 if (!isCmd && !m.isGroup && !m.key.fromMe) {
@@ -633,15 +633,15 @@ await mans.sendMessage(from, {text:sami}, {quoted:m})
 if (AntiLink) {
 linkgce = await mans.groupInviteCode(from)
 if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-m.reply(`\`\`\`「 *Detect Link* 」\`\`\`\n\n*Anda tidak akan dikick bot karena yang anda kirim adalah link group yg ada di group ini*`)
+m.reply(`\`\`\`「 Detect Link 」\`\`\`\n\n*Anda tidak akan dikick bot karena yang anda kirim adalah link group yg ada di group ini*`)
 } else if (isUrl(m.text)) {
-bvl = `\`\`\`「 *Detect Link* 」\`\`\`\n\n*Admin telah mengirim link, admin dibebaskan untuk mengirim link apapun*`
+bvl = `\`\`\`「 Detect Link 」\`\`\`\n\n*Admin telah mengirim link, admin dibebaskan untuk mengirim link apapun*`
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
 kice = m.sender
 await mans.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-mans.sendMessage(from, {text:`\`\`\`「 *Detect Link* 」\`\`\`\n\n@${kice.split("@")[0]} *Telah dikick karena send link di group ini*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+mans.sendMessage(from, {text:`\`\`\`「 Detect Link 」\`\`\`\n\n@${kice.split("@")[0]} *Telah dikick karena send link di group ini*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 }
@@ -986,8 +986,8 @@ message: {
 "mimetype": "image/jpeg",
 "jpegThumbnail": log0 //Gambarnye
 },
-"title": "Lol Lexxy+", //Kasih namalu 
-"description": "SELF BOT", 
+"title": "Lol ArullOfc+", //Kasih namalu 
+"description": "Public BOT", 
 "currencyCode": "USD",
 "priceAmount1000": "2000",
 "retailerId": "MyMans",
@@ -1007,7 +1007,7 @@ orderMessage: {
 itemCount : 1,
 status: 1,
 surface : 1,
-message: 'MyMans', //Kasih namalu
+message: 'ArullOfc', //Kasih namalu
 orderTitle: 'Bang',
 thumbnail: log0, //Gambarnye
 sellerJid: '0@s.whatsapp.net'
@@ -1228,7 +1228,7 @@ case 'list': case 'menu': case 'help': case '?': {
                                     id: 'hanzo'
                                 }
                             }]
-mans.send5ButImg(m.chat, listmn, `© 𝘊𝘳𝘦𝘢𝘵𝘦𝘥 𝘉𝘺 *ArullOfc*`, global.thumb, kontol)
+mans.send5ButImg(m.chat, listmn, `©ArullOfc`, global.thumb, kontol)
 }
         	break
 case 'grupbot':
@@ -2097,7 +2097,7 @@ case 'wallpaper': {
                 let buttonMessage = {
                     image: { url: result.image[0] },
                     caption: `Title : ${result.title}\nCategory : ${result.type}\nDetail : ${result.source}\nMedia Url : ${result.image[2] || result.image[1] || result.image[0]}`,
-                    footer: `© Created Lol Lexxy`,
+                    footer: `© Created Lol ArullOfc`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2125,7 +2125,7 @@ case 'wallpaper': {
 case 'quotesimage':case 'qoutesimage':
 				   let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
 				   fakey(mess.wait)
-				  mans.sendMessage(m.chat, { image: { url: cok }, caption: 'Done By LexxySlemek' }, { quoted: m })
+				  mans.sendMessage(m.chat, { image: { url: cok }, caption: 'Done By ArullOfc' }, { quoted: m })
 				  break
             case 'quotesanime': case 'quoteanime': {
 		let { quotesAnime } = require('./lib/scraper')
@@ -3519,7 +3519,7 @@ if (!m.isGroup) return m.reply(mess.group)
 let response = await mans.groupInviteCode(m.chat)
 mans.sendMessage(m.chat, {text:`Link Group ${groupMetadata.subject} : \nhttps://chat.whatsapp.com/${response}l`, "contextInfo": {
 mimetype: "image/jpeg",
-text: "Lol Lexxy+",
+text: "Lol ArullOfc+",
 "forwardingScore": 1000000000,
 isForwarded: true,
 sendEphemeral: true,
@@ -3800,7 +3800,7 @@ case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat':
                 break
 case 'nulis': {
 if (isBan) return m.reply(mess.ban)
-if (args.length < 1) return m.reply(`Example :\n${prefix}nulis hai|91|#ff020a|Manusia terganteng adalah salman alfarizi`)
+if (args.length < 1) return m.reply(`Example :\n${prefix}nulis hai|91|#ff020a|Manusia terganteng adalah ArullOfc`)
 if (isLimit < 1) return reply("Limit kamu sudah habis , silahkan beli dengan cara #buy limit _jumlah_")
      db.users[m.sender].limit -= 1 // -1 limit
      m.reply(`Satu limit terpakai\nSisa limit kamu : ${global.db.users[m.sender].limit}`)
@@ -3905,7 +3905,7 @@ break
 case 'self': {
 if (isBan) return m.reply(mess.ban)
 if (!isCreator) return m.reply(mess.owner)
-mans.public = false
+mans.public = true
 m.reply('Sukses Change To Self Usage')
 mans.setStatus(`Mode : Self Created By ArullOfc`)
 }
@@ -4368,7 +4368,7 @@ footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"Lol Lexxy+ - Twitter Downloader",
+title:"Lol ArullOfc+ - Twitter Downloader",
 body:lotwit.title ? lotwit.title : "Twitter Downloader",
 thumbnail: log0,
 mediaType:1,
@@ -4397,7 +4397,7 @@ footer: "© Lol Lexxy+",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"Lol Lexxy+ - Twitter Downloader",
+title:"Lol ArullOfc+ - Twitter Downloader",
 body: "Twitter Downloader",
 thumbnail: log0,
 mediaType:1,
@@ -4429,7 +4429,7 @@ let buttons = [
 let buttonMessage = {
 video: {url:resd.medias[0].url},
 caption: teks,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
@@ -4459,11 +4459,11 @@ let buttons = [
 let buttonMessage = {
 video: {url:args[0]},
 caption: "Done!",
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"Lol Lexxy+ - Facebook Downloader",
+title:"Lol ArullOfc+ - Facebook Downloader",
 body: " Facebook Downloader",
 thumbnail: log0,
 mediaType:1,
@@ -4527,7 +4527,7 @@ case 'iqra': {
 		oh = `Example : ${prefix + command} 3\n\nIQRA Yang tersedia : 1,2,3,4,5,6`
 		if (!text) return oh
 		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
-		mans.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf By Lexxy`}, {quoted:m}).catch ((err) => m.reply(oh))
+		mans.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf By ArullOfc`}, {quoted:m}).catch ((err) => m.reply(oh))
 		}
 		break
 		case 'juzamma': {
@@ -4657,7 +4657,7 @@ Author : ${anu.author.name}
 Channel : ${anu.author.url}
 Description : ${anu.description}
 Url : ${anu.url}`,
-                    footer: `Created By © LexxySlemek\nPilih Video Apa Audio?`,
+                    footer: `Created By © ArullOfc\nPilih Video Apa Audio?`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4692,7 +4692,7 @@ buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title: res.title,
-body: "© Lol Lexxy+ - X - Lol Lexxy+",
+body: "© Lol ArullOfc+ - X - Lol ArullOfc+",
 thumbnail: {url:res.thumb},
 mediaType:2,
 mediaUrl: args[0],
@@ -5000,7 +5000,7 @@ case 'pinterest': {
 case 'swm': case 'stickerwm': {
  fakey(mess.wait)
 if (isBan) return m.reply(mess.ban)
-if (!args.join(" ")) return m.reply(`Example :\nswm Lexxy||77+ | Pack`)
+if (!args.join(" ")) return m.reply(`Example :\nswm ArullOfc||77+ | Pack`)
 if (isLimit < 1) return reply("Limit kamu sudah habis , silahkan beli dengan cara #buy limit _jumlah_")
      db.users[m.sender].limit -= 1 // -1 limit
      m.reply(`Satu limit terpakai\nSisa limit kamu : ${global.db.users[m.sender].limit}`)
