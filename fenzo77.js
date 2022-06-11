@@ -149,12 +149,12 @@ const isUser = pendaftar.includes(m.sender)
 // Other
 const isBan = banUser.includes(m.sender)
 const isRakyat = isCreator || global.rkyt.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
-const AntiLink = m.isGroup ? ntilink.includes(from) : false
+const AntiLink = m.isGroup ? ntilink.includes(from) : true
 const welcm = m.isGroup ? wlcm.includes(from) : true
 const GcRvk = m.isGroup ? gcrevoke.includes(from) : false
 const isLeveling = m.isGroup ? _leveling.includes(from) : true
 const isAutoStick = _autostick.includes(from)
-const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
+const isAutoSticker = m.isGroup ? autosticker.includes(from) : true
 const isSewa = _sewa.checkSewaGroup(from, sewa)
 autoreadsw = true
 // Quoted
@@ -633,15 +633,15 @@ await mans.sendMessage(from, {text:sami}, {quoted:m})
 if (AntiLink) {
 linkgce = await mans.groupInviteCode(from)
 if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-m.reply(`\`\`\`「 Detect Link 」\`\`\`\n\nAnda tidak akan dikick bot karena yang anda kirim adalah link group yg ada di group ini`)
+m.reply(`\`\`\`「 *Detect Link* 」\`\`\`\n\n*Anda tidak akan dikick bot karena yang anda kirim adalah link group yg ada di group ini*`)
 } else if (isUrl(m.text)) {
-bvl = `\`\`\`「 Detect Link 」\`\`\`\n\nAdmin telah mengirim link, admin dibebaskan untuk mengirim link apapun`
+bvl = `\`\`\`「 *Detect Link* 」\`\`\`\n\n*Admin telah mengirim link, admin dibebaskan untuk mengirim link apapun*`
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
 kice = m.sender
 await mans.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-mans.sendMessage(from, {text:`\`\`\`「 Detect Link 」\`\`\`\n\n@${kice.split("@")[0]} Telah dikick karena send link di group ini`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+mans.sendMessage(from, {text:`\`\`\`「 *Detect Link* 」\`\`\`\n\n@${kice.split("@")[0]} *Telah dikick karena send link di group ini*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 }
@@ -1136,7 +1136,7 @@ const jumlahUser = pendaftar.length
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
   
 const listmn = `Selamat ${salam} ${pushname} 👋
-Saya *${namebot}*, Assisten *Lexxy Official* Bot Ini Adalah Beta Multi-Device WhatsApp.
+Saya *${namebot}*, Assisten *ArullOfc* Bot Ini Adalah Beta Multi-Device WhatsApp.
 Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 ─────────────
 ❏ *Info User*
@@ -1145,13 +1145,13 @@ Jika Ada Fitur Error Atau Bug Segera Lapor Ke Owner Bot
 > Role User : *${role}*
 ────────────
 ❏ *Info Creator*
-> Name : *Lexxy Official*
-> Nomor : *082279915237*
+> Name : *ArullOfc*
+> Nomor : *6285822347348*
 > Umur : *18+*
 > Region : *Indonesia 🇲🇨*
 > Hobyy : *Coding*
-> Made in : *Palembang*
-> Nama Asli : *Pebri Pratama*
+> Made in : *Kalimantan Selatan*
+> Nama Asli : *Sahrull...Private*
 ────────────
 ❏ *Info Server*
 > Tanggal Server : *${jangwak}*
@@ -1185,32 +1185,32 @@ case 'hanzo': case 'prp': case 'inventori': case 'profile':{
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
      
      var flob = await getBuffer(picak+'Profile User')
-     let teksehmazeh = `*── 「 PROFIL BIODATA 」 ──*\n\n`
+     let teksehmazeh = `*── 「 *PROFIL BIODATA* 」 ──*\n\n`
      teksehmazeh += `*Name* : ${pushname}\n`
      teksehmazeh += `*Nomer* : _wa.me/${m.sender.split("@")[0]}_\n`
      teksehmazeh += `*Limit* : ${global.db.users[m.sender].limit}\n`
      teksehmazeh += `*Role* : ${role}\n`
      teksehmazeh += `*Level* : ${getLevelingLevel(m.sender)}`
      let butRun = [
-        	{ urlButton: { displayText: `Group WhatsApp`, url : `https://chat.whatsapp.com/E3zewfxrc5pKE6Rzb3BuqG` } },
-        	{ urlButton: { displayText: `Instagram`, url : `https://Instagram.com/Lexxy24` } },
-            { urlButton: { displayText: `☎️Contact Me`, url: `+62 857-8900-4732` } },
+        	{ urlButton: { displayText: `Group ArullBotzMD`, url : `https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1` } },
+        	{ urlButton: { displayText: `Instagram`, url : `https://Instagram.com/sahrulwara_____` } },
+            { urlButton: { displayText: `☎️Contact Me`, url: `+6285822347348` } },
             { quickReplyButton: { displayText: `🏧 leaderboard`, id: 'leaderboard'} }
         	]
-        	mans.sendMessage(m.chat, { caption: teksehmazeh, document: { url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pptx' }, mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', fileName: '© LexxyBotMD', templateButtons: butRun, footer: `ingin Berpetualang Lagi`, mentions: [m.sender] })
+        	mans.sendMessage(m.chat, { caption: teksehmazeh, document: { url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pptx' }, mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', fileName: '© ArullBotz-MD', templateButtons: butRun, footer: `ingin Berpetualang Lagi?`, mentions: [m.sender] })
         	}
         	break
  
 case 'list': case 'menu': case 'help': case '?': {
                 let kontol = [{
                                 urlButton: {
-                                    displayText: 'Source Code',
-                                    url: 'https://github.com/Lexxy24/KaguraMD'
+                                    displayText: 'Group Ofc ArullBotzMD',
+                                    url: 'https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1'
                                 }
                             }, {
                                 callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 822-7991-5237'
+                                    displayText: 'Number ArullOfc',
+                                    phoneNumber: '+6285822347348'
                                 }
                             },{
                                 quickReplyButton: {
@@ -1228,13 +1228,13 @@ case 'list': case 'menu': case 'help': case '?': {
                                     id: 'hanzo'
                                 }
                             }]
-mans.send5ButImg(m.chat, listmn, `© 𝘊𝘳𝘦𝘢𝘵𝘦𝘥 𝘉𝘺 𝘓𝘦𝘹𝘹𝘺 𝘖𝘧𝘧𝘪𝘤𝘪𝘢𝘭`, global.thumb, kontol)
+mans.send5ButImg(m.chat, listmn, `© 𝘊𝘳𝘦𝘢𝘵𝘦𝘥 𝘉𝘺 *ArullOfc*`, global.thumb, kontol)
 }
         	break
 case 'grupbot':
 case 'groupbot':
 case 'botgrup':
-fakey(`https://chat.whatsapp.com/E3zewfxrc5pKE6Rzb3BuqG`)
+fakey(`https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1`)
 break
 case 'limit':
 fakey(`*Sisa Limit Anda : ${global.db.users[m.sender].limit}*`)
@@ -1253,9 +1253,9 @@ case 'hoorror':{
      m.reply(`Satu limit terpakai\nSisa limit kamu : ${global.db.users[m.sender].limit}`)
      let link = `https://textpro.me/horror-blood-text-effect-online-883.html`
      let anui = await textpro(link, q)
-     fakey(`Tunggu Sebentar Sedang Membuat Makernya Sekitar 1 Menit Kurang`) 
+     fakey(`*Tunggu Sebentar Sedang Membuat Makernya Sekitar 1 Menit Kurang*`) 
      console.log(anui)
-    mans.sendMessage(from, {image:{url:anui}, caption:"Done!"}, {quoted:m})
+    mans.sendMessage(from, {image:{url:anui}, caption:"*Done cuy!*"}, {quoted:m})
 }
    break
   case 'whitebear':{
@@ -1264,9 +1264,9 @@ case 'hoorror':{
      m.reply(`Satu limit terpakai\nSisa limit kamu : ${global.db.users[m.sender].limit}`)
      let link = `https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html`
      let anui = await textpro(link, q)
-     fakey(`Tunggu Sebentar Sedang Membuat Makernya Sekitar 1 Menit Kurang`) 
+     fakey(`*Tunggu Sebentar Sedang Membuat Makernya Sekitar 1 Menit Kurang*`) 
      console.log(anui)
-    mans.sendMessage(from, {image:{url:anui}, caption:"Done!"}, {quoted:m})
+    mans.sendMessage(from, {image:{url:anui}, caption:"*Done cuy!*"}, {quoted:m})
 }
    break
 case 'thunder':{
@@ -2229,7 +2229,7 @@ case 'coffe': case 'kopi': {
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
                     caption: `☕ Random Coffe`,
-                    footer: `Created By © LexxySlemek`,
+                    footer: `Created By © ArullOfc`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2278,7 +2278,7 @@ delete this.suit[id]
 }
 break
 
-//============ RUMUS BIAR LU PINTER DEK - FAX
+//============ RUMUS BIAR LU PINTER DEK - By ArullOfc
 case 'luas-segitiga':
 fakey(mess.wait)
 if (!q) return m.reply(`untuk mencari hasil dari luas segitiga\nGunakan ${prefix}luassegitiga alas tinggi\ncontoh: ${prefix}luas-segitiga 12 7`)
@@ -2575,13 +2575,13 @@ if (!args.join(" ")) return m.reply(`Text mana?\n\nExample : ${prefix + command}
 		    await sleep(1500)
 		    let btn = [{
                                 urlButton: {
-                                    displayText: 'SCRIPT',
-                                    url: 'https://github.com/Lexxy24/KaguraMD'
+                                    displayText: 'Group ArullBotzMD',
+                                    url: 'https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1'
                                 }
                             }, {
                                 callButton: {
                                     displayText: 'OWNER',
-                                    phoneNumber: ' +62 822-7991-5237'
+                                    phoneNumber: ' +6285822347348'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -2599,7 +2599,7 @@ if (!args.join(" ")) return m.reply(`Text mana?\n\nExample : ${prefix + command}
                                     id: 'hanzo'
                                 }
                             }]
-                      let txt = `「 Broadcast Bot 」\n\n${text}`
+                      let txt = `「 *Broadcast ArullBotzMD* 」\n\n${text}`
                       mans.send5ButImg(yoi, txt, mans.user.name, global.thumb, btn)
 		}
 		m.reply('Sukses Broadcast')
@@ -2651,7 +2651,7 @@ let buttonMessageVote = {
 image: log0,
 jpegThumbnail: thum,
 caption: teks_vote,
-footer: "© Lol Lexxy+ - X - Lol Lexxy+",
+footer: "© Lol ArullOfc+ - X - Lol ArullOfc+",
 buttons: buttonsVote,
 headerType: 1
 }
@@ -2695,7 +2695,7 @@ let buttonMessageUpvote = {
 image: log0,
 jpegThumbnail: thum,
 caption: teks_vote,
-footer: "© Lol Lexxy+ - X - Lol Lexxy+",
+footer: "© Lol ArullOfc+ - X - Lol ArullOfc+",
 buttons: buttonsUpvote,
 headerType: 1,
 mentions: menvote
@@ -2932,18 +2932,18 @@ case 'welcome': {
 if (isBan) return m.reply(mess.ban)
 if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isCreator) return m.reply(mess.admin)
-if (args.length < 1) return m.reply('ketik on untuk mengaktifkan\nketik off untuk menonaktifkan')
+if (args.length < 1) return m.reply('*ketik on untuk mengaktifkan\nketik off untuk menonaktifkan*')
 if (args[0] === "on") {
-if (welcm) return m.reply('Sudah Aktif')
+if (welcm) return m.reply('*Sudah Aktif Kak*')
 wlcm.push(from)
-m.reply('Succes menyalakan welcome di group ini')
+m.reply('*Succes menyalakan welcome di group ini*')
 } else if (args[0] === "off") {
-if (!welcm) return m.reply('Sudah Mati')
+if (!welcm) return m.reply('*Sudah Mati Kak*')
 let off = wlcm.indexOf(from)
 wlcm.splice(off, 1)
-m.reply('Succes mematikan welcome di group ini')
+m.reply('*Succes mematikan welcome di group ini*')
 } else {
-m.reply('on untuk mengaktifkan, off untuk menonaktifkan')
+m.reply('*on untuk mengaktifkan, off untuk menonaktifkan*')
 }
 }
 break
@@ -3049,9 +3049,9 @@ break
 case 'sewa':
 m.reply(`*BOT ON 24 JAM & BISA BUAT PRICELIST*
 ╭──「 *_SEWA BOT_* 」
-├  1 MINGGU : IDR 10.000 (10k)
-├  1 BULAN : IDR 15.000 (15k)
-├   PERMANEN : IDR 50.000 (50k)
+├  1 MINGGU : IDR 5.000 (5k)
+├  1 BULAN : IDR 10.000 (10k)
+├   PERMANEN : IDR 20.000 (20k)
 ╰────
 ╭─ [ KELEBIHAN BOT ]
 ├  ＯＮ 24 ＪＡＭ
@@ -3065,16 +3065,16 @@ m.reply(`*BOT ON 24 JAM & BISA BUAT PRICELIST*
 ├  DAN RATUSAN FITUR LAINYA
 ╰────
 ╭─[ *MINAT CHAT* ]
-├  🪀 wa.me/6282279915237?text=sewa+bot
+├  🪀 wa.me/6285822347348?text=sewa+bot
 ╰────
 ╭─[ *TES BOT? CHAT NOMER DI BAWAH* ]
-├ Wa.me/6285750758067
+├ Wa.me/6281348735630
 ╰────
 ╭─[ *PAYMENT* ]
-├  GOPAY
-├  OVO
+├  
+├  
 ├  PULSA +10k
-├  QRIS ALL PAYMENT
+├  
 ╰────
 *_BOT INI MEMAKAI RDP BUKAN TERMUX/HEROKU/WIBUSOFT_*
 *_DI JAMIN ANTI DELAY & ON 24 JAM!_*
@@ -3097,7 +3097,7 @@ m.reply(`*BOT ON 24 JAM & BISA BUAT PRICELIST*
 │    DLL DI GANTI JADI TERSERAH LU
 ╰────
 ╭─[ *MINAT CHAT* ]
-├  🪀 wa.me/6282279915237?text=jadi+bot
+├  🪀 wa.me/6281348735630?text=jadi+bot
 ╰────
 
 
@@ -3113,7 +3113,7 @@ m.reply(`*BOT ON 24 JAM & BISA BUAT PRICELIST*
 ├  BISA OPEN MURID 
 ╰────
 ╭─[ *MINAT CHAT* ]
-├  🪀 wa.me/6282279915237?text=join+murid+bot
+├  🪀 wa.me/6285822347348?text=join+murid+bot
 ╰────`)
 break
 case 'antilink': {
@@ -3132,7 +3132,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-mans.sendMessage(from, {text: `PERINGATAN!!! jika bukan admin jangan send link di group ini`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+mans.sendMessage(from, {text: `*PERINGATAN!!! jika bukan admin jangan send link di group ini*`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLink) return m.reply('Sudah Mati')
 let off = ntilink.indexOf(from)
@@ -3149,7 +3149,7 @@ if (!m.isGroup) return m.reply(mess.group)
 let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
 let online = [...Object.keys(store.presences[id]), botNumber]
 let liston = 1
-mans.sendText(m.chat, '     「 List Online 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+mans.sendText(m.chat, '     「 *List Online* 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break
 case 'chat': {
@@ -3279,7 +3279,7 @@ let buttonMessage = {
 image: log0,
 jpegThumbnail: thum,
 caption: teks,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -3303,7 +3303,7 @@ let buttonMessage = {
 image: {url:res[0].icon},
 jpegThumbnail: thum,
 caption: teks,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -3329,7 +3329,7 @@ let buttonMessage = {
 image: log0,
 jpegThumbnail: thum,
 caption: teks,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -3352,7 +3352,7 @@ let buttonMessage = {
 image: log0,
 jpegThumbnail: thum,
 caption: teks,
-footer: "© Lol Lexxy+ ",
+footer: "© Lol ArullOfc+ ",
 buttons: buttons,
 headerType: 4
 }
@@ -3529,7 +3529,7 @@ sendEphemeral: true,
 "previewType": "PHOTO",
 "thumbnailUrl": thum,
 "thumbnail": thum,
-"sourceUrl": "https://youtube.com/watch?v=w6w0cy_1HY4"
+"sourceUrl": "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1"
 }}}, { quoted: m, detectLink: true })
 }
 break
@@ -3571,8 +3571,8 @@ let buttons = [
 let buttonMessage = {
 image: log0,
 jpegThumbnail: thum,
-caption: `*「 Lol Lexxy+ 」*\n\nChange Info, Select Open Or Close`,
-footer: "© Lol Lexxy+",
+caption: `*「 Lol ArullOfc+ 」*\n\nChange Info, Select Open Or Close`,
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -3597,8 +3597,8 @@ let buttons = [
 let buttonMessage = {
 image: log0,
 jpegThumbnail: thum,
-caption: `*「 Lol Lexxy+ 」*\n\nChange Group Setting, Select Open Or Close`,
-footer: "© Lol Lexxy+",
+caption: `*「 Lol ArullOfc+ 」*\n\nChange Group Setting, Select Open Or Close`,
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -3894,7 +3894,7 @@ if (isBan) return m.reply(mess.ban)
 if (!isCreator) return m.reply(mess.owner)
 mans.public = true
 m.reply('Sukse Change To Public Usage')
-mans.setStatus(`Mode : Public Created By Lexxy`)
+mans.setStatus(`Mode : Public Created By ArullOfc`)
 }
 break
 case 'setstatut':
@@ -3907,7 +3907,7 @@ if (isBan) return m.reply(mess.ban)
 if (!isCreator) return m.reply(mess.owner)
 mans.public = false
 m.reply('Sukses Change To Self Usage')
-mans.setStatus(`Mode : Self Created By Lexxy`)
+mans.setStatus(`Mode : Self Created By ArullOfc`)
 }
 break
 case 'speed':case 'ping': case 'botstatus': case 'statusbot': {
@@ -4184,16 +4184,16 @@ caption: `*| GOOGLE IMAGE |*
 
 🤠 Query : ${text}
 🔗 Media Url : ${images}`,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"NOMOR BOT WHATSAPP, MULTI DEVICE TERBARU FITUR BERJIBUN - ZackMans",
-body:"© Lol Lexxy+ - X - Lol Lexxy+",
+title:"",
+body:"© Lol ArullOfc+ - X - Lol ArullOfc+",
 thumbnail: log0,
 mediaType:2,
-mediaUrl: "https://youtube.com/watch?v=w6w0cy_1HY4",
-sourceUrl: "https://youtube.com/watch?v=w6w0cy_1HY4"
+mediaUrl: "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1",
+sourceUrl: "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1"
 }}
 }
 mans.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -4247,7 +4247,7 @@ let buttonMessage = {
 image:log0,
 jpegThumbnail:thum,
 caption: textbv,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -4286,7 +4286,7 @@ let buttonMessage = {
 image:log0,
 jpegThumbnail:thum,
 caption: textbv,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4
 }
@@ -4315,12 +4315,12 @@ if (isBan) return m.reply(mess.ban)
 if (!args[0]) return m.reply("Linknya mana kak?")
 try {
 mans.sendMessage(from, {video:{url:args[0]}, caption:"Succes", contextInfo:{externalAdReply:{
-title:"NOMOR BOT WHATSAPP, MULTI DEVICE TERBARU FITUR BERJIBUN - ZackMans",
-body:"© Lol Lexxy+ - X - Lol Lexxy+",
+title:"",
+body:"© Lol ArullOfc+ - X - Lol ArullOfc+",
 thumbnail: log0,
 mediaType:2,
-mediaUrl: "https://youtube.com/watch?v=w6w0cy_1HY4",
-sourceUrl: "https://youtube.com/watch?v=w6w0cy_1HY4"
+mediaUrl: "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1",
+sourceUrl: "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1"
 }}}, {quoted:m})
 } catch {
 m.reply("Linknya Error")
@@ -4332,12 +4332,12 @@ if (isBan) return m.reply(mess.ban)
 if (!args[0]) return m.reply("Linknya mana kak?")
 try {
 mans.sendMessage(from, {image:{url:args[0]}, caption:"Succes", contextInfo:{externalAdReply:{
-title:"NOMOR BOT WHATSAPP, MULTI DEVICE TERBARU FITUR BERJIBUN - ZackMans",
-body:"© Lol Lexxy+ - X - Lol Lexxy+",
+title:"",
+body:"© Lol ArullOfc+ - X - Lol ArullOfc+",
 thumbnail: log0,
 mediaType:2,
-mediaUrl: "https://youtube.com/watch?v=w6w0cy_1HY4",
-sourceUrl: "https://youtube.com/watch?v=w6w0cy_1HY4"
+mediaUrl: "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1",
+sourceUrl: "https://chat.whatsapp.com/LDN0EeJfASs0lbUhJsOJu1"
 }}}, {quoted:m})
 } catch {
 m.reply("Linknya Error")
@@ -4364,7 +4364,7 @@ let buttons = [
 let buttonMessage = {
 video: {url:lotwit.medias[1].url},
 caption: teks,
-footer: "© Lol Lexxy+",
+footer: "© Lol ArullOfc+",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
