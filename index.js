@@ -184,7 +184,7 @@ GBye = await getBuffer(`https://hardianto.xyz/api/tools/leave?nama=${encodeURICo
         return status
     }
 	
-    mans.public = true
+    mans.public = false
 
     mans.serializeM = (m) => smsg(mans, m, store)
 
